@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<!---->
+<head>
+   <title>JavaScript Practice</title>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+
+<script>
+
+    /*
+_________________
+
+l  Game Button  l
+_________________
+
+*/
+
+function Game() {
+    var guess = parseInt(prompt("Guess the Number between 1 and 100, type 'Quit' to quit"));
+    var SecretNum = Math.floor(Math.random()*100);
+    var tries = 0;
+    var gotit = true;
+
+    while (gotit) {
+    	
+    	if (guess < SecretNum) {
+    	    guess = prompt(tries + 1 + " tries. Higher");
+    	} else if (guess > SecretNum) {
+    	    guess = prompt(tries + 1 + " tries. Lower");
+    	} else if (guess == SecretNum) {
+            document.getElementById("Guess").innerHTML = "Congratulations! You got it in " + tries + " tries!";  
+            gotit = false;
+        } else if (guess == "Quit") {
+             document.getElementById("Guess").innerHTML = "Welp, I guess that's fair enough.";  
+            gotit = false;
+        } else {
+    	    guess = prompt("Invalid entry");
+    	}
+    	tries = tries + 1;
+    } 
+}
+
+ /*
+___________________
+
+l  Color Button  l
+___________________
+
+*/
+
+function ColorButton() {
+	var favColour = prompt("What's your favourite colour?");
+	if (favColour == "Green") {alert ("Me too!");
+}
+	else if (favColour =="Blue"){alert("Cool");
+}
+
+}
+
+ /*
+_____________________
+
+l  FizzBuzz Button  l
+_____________________
+
+*/
+
+function ThirdExercise() {
+	var FizzBuzz = prompt("Enter any number from 1 to 100; multiples of 3 will output a Fizz, multiples of 5 will output Buzz, and multiples of both numbers will output FizzBuzz.");
+	if (FizzBuzz == "Green") {alert ("Me too!");
+}
+
+}
+
+ /*
+_____________________
+
+l  Password Button  l
+_____________________
+
+*/
+
+function Password() {
+
+	var Guess = prompt ("Wanna' try to guess my password? You have three tries. Type Quit to quit.");
+    
+	  for( var i =3 ; i >-1 ;  i-- ){
+
+    	if (Guess == "123") {
+             document.getElementById("Output").innerHTML = "Good Job! You got it!";
+            
+        } else if (Guess == "Quit") {
+            document.getElementById("Output").innerHTML = "Fair Enough." ;
+
+        } else if (Guess != "123" && i>0) {
+            Guess = prompt("Wrong, try again, you have " + i + " tries left.");
+
+        } if (i >0) {
+            document.getElementById("Output").innerHTML = "Sorry, you don't have any more tries left."; 
+        } 
+
+	}
+
+}
+
+ /*
+_____________________
+
+l  QuizPrep Button  l
+_____________________
+
+*/
+
+function Cheer() {
+
+    var Team = prompt("Who are we Cheering for?");
+    var Repeats = prompt("How many Cheers?");
+        for ( var i=0; i<Repeats; i ++ ){
+        
+        document.getElementById("QuizOutput").innerHTML = i*("Go team!");
+
+    }
+}
+
+/*
+___________________
+
+l  Array3 Button  l
+___________________
+
+*/
+
+function Array3() {
+
+    var favouriteThings = ["I ", "am ", "a ", "String"];
+
+       for ( var i=0; i<favouriteThings.length ; i++ ){
+
+       document.getElementById("QuizOutput").innerHTML = favouriteThings;
+
+    }
+}
+
+/*
+___________________
+
+l  Array4 Button  l
+___________________                    
+
+*/
+
+function Array4() {
+
+    var favouriteThings = ["Hi", 52, "Car", 46];
+
+       for ( var i=0; i<favouriteThings.length ; i++ ){
+
+       document.getElementById("QuizOutput").innerHTML = favouriteThings[2];
+
+    }   
+}
+
+/*
+___________________
+
+l  Array5 Button  l
+___________________                    
+
+*/
+
+function Array5() {
+
+    var favouriteThings = ["I ", "am ", "a ", "String"];
+
+       for ( var i=0; i<favouriteThings ; i++ ){
+
+       document.getElementById("QuizOutput").innerHTML = favouriteThings[i];
+
+    }
+}
+
+
+/*
+____________________
+
+l  End of Buttons  l
+____________________
+
+*/
+ 
+
+
+
+
+</script>
+</head>
+
+<body>
+	<ul>
+	<header><h2><b>AqibAC's Website Portfolio</b></h2>
+</header>
+	<li><a href="../Index.html"> Home </a></li>
+	<li><a href="../PAGES/Qualifications.html"> Exam Review Game </a></li>
+	<li><a class="active" href="../PAGES/Page_More.html"> JavaScript Practice </a></li>
+	<li style="float:right"><a href="../PAGES/References.html"> Coding References </a></li>
+	</ul>
+<div id="Below_Navbar">
+
+<h1>Java Script Practice</h1>
+
+	<button onclick="Ambition()">Ambitious Button</button>
+
+	<button onclick="Game()">Game Button</button>
+
+	<button onclick="ColorButton()">Color Button</button>
+
+	<p id ="Guess"></p>
+
+	<button onclick="ThirdExercise()">FizzBuzz Exercise</button>
+
+	<button onclick="Password()"> Three Guess Password</button>
+
+	<p id ="Output"></p>
+
+	<button onclick="Cheer()">Quiz Button</button>
+
+    <button onclick="Array3()">Array Q3 Button</button>
+
+    <button onclick="Array4()">Array Q4 Button</button>
+
+    <button onclick="Array5()">Array 5 Button</button>
+
+    <p id ="QuizOutput"></p>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+    <img src="../IMAGES/ArraySheetThing.png">
+
+</div>
+</body>
+</html>
+
+<!--
+
+USE INSIDE HEAD 
+
+    <script>
+    function Game() {
+    	var guess = prompt("Guess the Number between 1 and 100, 'Q' to quit");
+    	var SecretNum = Math.floor(Math.random()*100);
+
+    if (guess == SecretNum) {
+    	document.getElemementById("Guess").innerHTML = "You got it!";
+
+    } else if (guess == "Q") {
+    	document.getElemementById("Guess").
+    	   innerHTML = "Quitter";
+    	}
+}
+    script end
+
+________________
+
+ SEPARATE GAME
+________________
+
+function WhileLoops() {
+	
+	var X = "Yes";
+
+	while (X == "Yes") {
+		X = prompt("Should we keep going?");
+	}
+
+	alert ("Goodbye");
+}
+
+_______________________________
+
+ While Loop for Password Guess
+_______________________________
+
+function Practice() {
+
+    var Guess = prompt ("Wanna' try to guess my password? You have three tries.");
+    var Password = "123";
+    var tries = 3;
+    var Correct = true;
+
+    while (Correct) {
+    	
+    	if (Guess != "123" && tries > 0) {
+
+    		tries --; 
+    	    Guess = prompt(tries + "tries. Wrong, try again, you have " + tries + " tries left.");
+    	} else if (Guess == "123") {
+            document.getElementById("Output").innerHTML = "Good Job! You got it!";  
+            Correct = false;
+        } else if (Guess == "Quit") {
+             document.getElementById("Output").innerHTML = "Fair enough.";  
+            Correct = false;
+        } else if (tries == "0") {
+             document.getElementById("Output").innerHTML = "Sorry, you don't have any more tries left."; 
+        }
+	}
+
+}
+
+
+function Password() {
+
+	var Guess = prompt ("Wanna' try to guess my password? You have three tries.");
+	var QuittingTime = "Quit";
+    var Password = "123";
+	for( var i =3 ; i >0 ;  i-- ){
+	console.log("1");
+    	if (i == 0) {
+
+             document.getElementById("Output").innerHTML = "Sorry, you don't have any more tries left."; 
+        } else if (Guess != "123") {
+    	    Guess = prompt(i + " tries. Wrong, try again, you have " + i + " tries left.");
+    	} else if (Guess == "123") {
+            document.getElementById("Output").innerHTML = "Good Job! You got it!";  
+        } else if (Guess == "Quit") {
+             document.getElementById("Output").innerHTML = "Fair enough.";  
+        } 
+
+	}
+
+}
+
+
+
+function Password() {
+
+	var Guess = prompt ("Wanna' try to guess my password? You have three tries.");
+	var QuittingTime = "Quit";
+    var Password = "123";
+	for( var i =3 ; i >-1 ;  i-- ){
+	console.log("1");
+    	if (i == 0) {
+             document.getElementById("Output").innerHTML = "Sorry, you don't have any more tries left."; 
+        } else if (Guess != "123") {
+    	    Guess = prompt(i + " tries. Wrong, try again, you have " + i + " tries left.");
+    	} else if (Guess == "123") {
+            document.getElementById("Output").innerHTML = "Good Job! You got it!";  
+        } else if (Guess == "Quit") {
+            document.getElementById("Output").innerHTML = "Fair enough.";  
+        } 
+
+	}
+
+}
+
+-->
+
+
+
+
+
+
+
+
+<!--
+
+
+        } else if (Guess != "123" && i>0) {
+            Guess = prompt(i + " tries. Wrong, try again, you have " + i + " tries left.");
+
+
+
+/*
+_____________________
+
+l  Template Button  l
+_____________________
+
+*/
+
+function Blank() {
+
+
+}
+
+	<button onclick="Word()">Template Button</button>
+
+-->
